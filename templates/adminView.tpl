@@ -1,0 +1,50 @@
+<table class="listaKsiazekTable" width="100%">
+    <tr>
+        <td>ID</td>
+        <td>Login</td>
+        <td>Imię</td>
+        <td>Nazwisko</td>
+        <td>Telefon</td>
+        <td>Email</td>
+        <td>Ulica</td>
+        <td>Miasto</td>
+        <td>Numer konta bankowego</td>
+        <td></td>
+    </tr>
+    {foreach $users as $user}
+        <tr>
+            <td>
+                {$user->getID()}
+            </td>
+            <td>
+                {$user->getLogin()}
+            </td>
+            <td>
+                {$user->getName()}
+            </td>
+            <td>
+                {$user->getSurname()}
+            </td>
+            <td>
+                {$user->getPhone()}
+            </td>
+            <td>
+                {$user->getEmail()}
+            </td>
+            <td>
+                {$user->getStreet()}
+            </td>
+            <td>
+                {$user->getCity()}
+            </td>
+            <td>
+                {$user->getBank()}
+            </td>
+            <td>
+                <a style='color: goldenrod;' href='index.php?action=remove_user&id={$user->getID()}'>
+                    USUŃ
+                </a>
+            </td>
+        </tr>
+    {/foreach}
+</table>
